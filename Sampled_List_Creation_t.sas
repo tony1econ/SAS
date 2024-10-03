@@ -1,5 +1,5 @@
 /* Importing the sample batch */
-proc import datafile="C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Current CV Sample Batch 1 Updated 091924.xlsx"
+proc import datafile=""
     out=sample
     dbms=xlsx
     replace;
@@ -9,31 +9,7 @@ run;
 /* Macro to create the sample list by reading multiple Excel files */
 %macro create_sample_list;
     /* File paths */
-    %let	file1	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\23SFDNM006 Cibola County FGP CV Returned.xlsx	;
-%let	file2	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\23SFDUT001 Five County FGP CV - Returned Tracker.xlsx	;
-%let	file3	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\23SFDWY002 City of Cheyenne CV - Returned Tracker.xlsx	;
-%let	file4	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\23SFENE002 CommunityAction CV.xlsx	;
-%let	file5	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\23SFEWI008 ADVOCAP FGP CV - Returned Tracker.xlsx	;
-%let	file6	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\21SFEKS005 Butler County FGP CV.xlsx	;
-%let	file7	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\21SFGTX002 AAA Texoma FGP CV - Copy.xlsx	;
-%let	file8	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\21SFHTN001 Memphis FGP CV - Returned Tracker.xlsx	;
-%let	file9	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\FGP\22SFHAL003 LeeRussellCounty FGP CV.xlsx	;
-%let	file9	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\21SRGLA003 SMILE ACS RSVP Lafayette CV.xlsx	;
-%let	file10	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\21SRGOK002 SW OK CommunityActionGroup CV - Returned Tracker.xlsx	;
-%let	file11	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\21SRHFL016 RSVP of Collier County CV.xlsx	;
-%let	file12	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\22SREKS002 ACS NCCC RSVP CV- Returned Tracker.xlsx	;
-%let	file13	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\22SREMN004 Aitkin-Carlton RSVP CV - Returned Tracker.xlsx	;
-%let	file14	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\23SRBPA004 United Way RSVP CV.xlsx	;
-%let	file15	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\23SRFCT001 Agency on Agings CV - Returned Tracker.xlsx	;
-%let	file16	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\23SRFNH001 Southern NH RSVP CV.xlsx	;
-%let	file17	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\23SRHFL002 RSVP of Brevard CV Returned Tracker.xlsx	;
-%let	file18	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\RSVP\23SRICA002 San Diego County RSVP CV - Returned Tracker.xlsx	;
-%let	file19	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\SCP\21SCHFL003 CityofJacksonville SCP CV.xlsx	;
-%let	file20	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\SCP\22SCHNC001 WAGES SCP CV.xlsx	;
-%let	file21	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\SCP\22SCIHI001 SCP of Hawaii CV - Returned tracker.xlsx	;
-%let	file22	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\SCP\23SCDNM011 SCP of Albuquerque CV - Returned Tracker.xlsx	;
-%let	file23	=	C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\CV1 Returned Trackers 9_27\Returned Participant Trackers\SCP\23SCEMO001 SCP Southeast Missouri CV.xlsx	;
-
+    %let	file1	= ;
 	%let num_files = 23;
 
     /* Create an empty dataset with the correct structure */
