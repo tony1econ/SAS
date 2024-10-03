@@ -1,4 +1,4 @@
-proc import datafile="C:\Users\apagano\OneDrive - JBS International\Desktop\SAS Education\selected sample 1.xlsx"
+proc import datafile=""
     out=narrative
     dbms=xlsx
     replace;
